@@ -1,7 +1,7 @@
 
 
 
-This script cleans up an Azure Container Registry (ACR) repository by deleting old images. It takes two inputs:
+This script cleans up an Azure Container Registry (ACR) repository by deleting old images. It takes some inputs:
 
 - `az_service_principal`: The service principal name for the Azure account with access to the ACR registry.
 - `az_password`: The password for the service principal.
