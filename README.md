@@ -13,7 +13,7 @@ This script cleans up an Azure Container Registry (ACR) repository by deleting o
 
 - Logs in to Azure using the service principal credentials.
 - Fetches a list of all the repositories in the ACR registry.
-- For each repository, gets a list of the first 7 images, sorted by date in descending order.
+- For each repository, gets a list of the first 7 images, sorted by date in descending order. (This number of images = 7 can be changed in the code). 
 - Gets a list of all the image tags in the repository.
 - Compares the two lists to identify the image tags that are not in the top 7.
 - Deletes the image tags that are not in the top 7.
