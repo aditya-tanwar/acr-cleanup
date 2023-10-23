@@ -6,6 +6,12 @@ This script cleans up an Azure Container Registry (ACR) repository by deleting o
 - `az_service_principal`: The service principal name for the Azure account with access to the ACR registry.
 - `az_password`: The password for the service principal.
 - `az_tenant`: The tenant ID for the Azure account.
+- `acr_registry_name`: The name of the acr registry.
+- `repo`: The name of the repository from the above acr registry.
+
+# Set the repository name that needs to be cleaned up
+
+repo
 
 ---
 
