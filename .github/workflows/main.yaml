@@ -1,0 +1,29 @@
+name: ACR CLEANUP
+
+on:
+# uncomment the below line to make this workflow a manually executed one 
+
+  workflow_dispatch:
+
+# uncomment the below lines to get this code running for cron scheduling 
+
+#  schedule:
+#    - cron: '*/2 * * * *'
+# Defining the env variables by taking in the github secrets ( that can be defined in the repository secrets ) as the values 
+env:
+  az_service_principal: ${{ secrets.az_service_principal }}
+  az_password: ${{ secrets.az_password }}
+  az_tenant: ${{ secrets.az_tenant }}
+
+jobs:
+  run-cron-job:
+    runs-on: [self-hosted, terraform]
+    steps:
+      - name: checkout the repository
+        uses: actions/checkout@v3
+      - name: Run cron job
+        run: | 
+          ls -ltr
+          chmod +x acr_cleanup.sh
+          ./acr_cleanup.sh
+        shell: bash
