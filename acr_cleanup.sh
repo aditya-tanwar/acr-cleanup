@@ -6,11 +6,11 @@ az login --service-principal -u $az_service_principal -p $az_password --tenant $
 
 # Set the Azure Container Registry name
 
-acr_registry_name="devuseacrepy09"
+acr_registry_name="<acr_registry_name>"
 
 # Set the repository name that needs to be cleaned up
 
-repo="dst-transform-launcher"
+repo="<acr_repository_name>"
 
 
 # Fetching all the repository in the given acr registry
