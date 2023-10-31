@@ -24,7 +24,7 @@ echo ""
 
 # The below line has to be uncommented to check the loops 
 
-#for repo in $all_repos; do
+for repo in $all_repos; do
 
         # Get a list of the first 7 images depending on the date ( descending order - From latest to oldest )
         
@@ -65,9 +65,9 @@ echo ""
 
         # UNCOMMENT THE BELOW LINES TO DELETE THE OLD REPOSITORIES
 
-        #for tag in ${to_be_deleted}; do
-        #      az acr manifest delete -r ${acr_registry_name} -n ${repo}:${tag} -y
-        #done
+        for tag in ${to_be_deleted}; do
+              az acr manifest delete -r ${acr_registry_name} -n ${repo}:${tag} -y
+        done
         echo ""
         echo ""
 
@@ -78,4 +78,4 @@ echo ""
         final_manifests=$(az acr manifest list-metadata -r ${acr_registry_name} -n ${repo} | jq -c '.[].tags[]?')
         echo ""
         echo $final_manifests
-#done
+done
